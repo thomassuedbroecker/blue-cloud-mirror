@@ -32,7 +32,7 @@ stages:
             echo "${CF_APP}-${current_time}" 
             
             echo "Show api"
-            
+
             cf api
             cf api "${CF_TARGET_URL}"
             cf target -o "${CF_ORG}" -s "${CF_SPACE}"
@@ -59,8 +59,8 @@ stages:
             cf logs "${CF_APP}" --recent
 
         target:
-          region_id: ${CF_TARGET_URL}
-          organization: ${CF_ORG}
+          region_id: ${CF_REGION_ID}
+          organization: ${CF_ORGANIZATION}
           space: ${CF_SPACE}
           application: ${CF_APP}
           api_key: ${API_KEY}
